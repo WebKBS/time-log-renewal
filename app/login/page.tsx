@@ -2,8 +2,19 @@ import LoginForm from "@/components/forms/LoginForm";
 import { Logo } from "@/constants/icons";
 import Image from "next/image";
 import timeImage from "@/public/images/background/time.jpg";
+import { createClient } from "@/utils/supabase/server";
+import { redirect } from "next/navigation";
 
-const LoginPage = () => {
+const LoginPage = async () => {
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user) {
+    redirect("/dashboard");
+  }
+
   return (
     <div className="relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <div className="relative hidden h-full flex-col bg-muted  text-white lg:flex dark:border-r">
