@@ -90,45 +90,44 @@ interface LogoProps {
 
 export const Logo = ({ ...props }: LogoProps) => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
     width="100"
     height="100"
     viewBox="0 0 100 100"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
+    className={props.className}
   >
-    <circle
-      cx="50"
-      cy="50"
-      r="45"
-      fill="#4CAF50"
-      stroke="#3E8E41"
-      strokeWidth="5"
-    />
+    <rect x="0" y="0" width="100" height="100" fill="#2196F3" rx="10" ry="10" />
+    <circle cx="50" cy="50" r="40" fill="#FFFFFF" />
     <line
       x1="50"
       y1="50"
       x2="50"
-      y2="20"
-      stroke="#ffffff"
+      y2="25"
+      stroke="#2196F3"
       strokeWidth="5"
       strokeLinecap="round"
     />
     <line
       x1="50"
       y1="50"
-      x2="70"
-      y2="50"
-      stroke="#ffffff"
+      x2="65"
+      y2="65"
+      stroke="#2196F3"
       strokeWidth="5"
       strokeLinecap="round"
-    />
-    <polyline
-      points="35,65 45,75 70,50"
-      fill="none"
-      stroke="#ffffff"
-      strokeWidth="5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
     />
   </svg>
+
+  // <svg
+  //   xmlns="http://www.w3.org/2000/svg"
+  //   width="100"
+  //   height="100"
+  //   viewBox="0 0 100 100"
+  //   className={props.className}
+  // >
+  //   <circle cx="50" cy="50" r="48" fill="#FF5722" />
+  //   <path d="M50,20 L65,50 L50,65 L35,50 Z" fill="#FFFFFF" />
+  //   <circle cx="50" cy="70" r="7" fill="#FFFFFF" />
+  //   <line x1="50" y1="50" x2="50" y2="70" stroke="#FFFFFF" strokeWidth="3" />
+  // </svg>
 );
