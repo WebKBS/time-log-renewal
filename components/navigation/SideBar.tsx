@@ -47,7 +47,7 @@ export default function Sidebar({ className }: SidebarProps) {
       </div>
       <ChevronLeft
         className={cn(
-          "absolute -right-3 top-10 z-50  cursor-pointer rounded-full border bg-background text-3xl text-foreground",
+          "absolute -right-3 top-10 z-50  cursor-pointer rounded-full border bg-primary text-3xl text-foreground",
           isMinimized && "rotate-180",
         )}
         onClick={handleToggle}
