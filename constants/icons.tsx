@@ -82,7 +82,11 @@ export const Icons = {
   check: Check,
 };
 
-export const Logo = ({ ...props }) => (
+interface LogoProps {
+  className?: string;
+}
+
+export const Logo = ({ ...props }: LogoProps) => (
   <svg
     width="100"
     height="100"

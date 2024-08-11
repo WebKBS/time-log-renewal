@@ -20,7 +20,7 @@ const LoginForm = () => {
     <>
       <Card className="mx-auto max-w-sm">
         <CardHeader>
-          <CardTitle className="text-2xl">LOGIN</CardTitle>
+          <CardTitle className="text-2xl font-extrabold">LOGIN</CardTitle>
           <CardDescription>
             계정에 로그인하려면 아래에 이메일을 입력하세요.
           </CardDescription>
