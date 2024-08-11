@@ -10,7 +10,12 @@ const LogOut = ({ className }: { className?: string }) => {
 
   return (
     <form action={formAction} className={className}>
-      <FormButton label={"로그아웃"} size={"sm"} variant="outline" />
+      <FormButton
+        label={"로그아웃"}
+        size={"sm"}
+        variant="outline"
+        className="w-[80%] mx-auto block md:w-auto"
+      />
     </form>
   );
 };

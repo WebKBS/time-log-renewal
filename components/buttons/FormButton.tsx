@@ -14,9 +14,10 @@ interface FormButtonProps {
     | "secondary"
     | "ghost"
     | "link";
+  className?: string;
 }
 
-const FormButton = ({ label, size, variant }: FormButtonProps) => {
+const FormButton = ({ label, size, variant, className }: FormButtonProps) => {
   const { pending } = useFormStatus();
 
   return (
@@ -26,7 +27,7 @@ const FormButton = ({ label, size, variant }: FormButtonProps) => {
       disabled={pending}
       size={size}
       variant={variant}
-      className="w-[80%] mx-auto block md:w-auto"
+      className={className}
     >
       {pending ? <LoadingIcon className="w-6 h-6" /> : label}
     </Button>
