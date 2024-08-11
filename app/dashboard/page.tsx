@@ -1,12 +1,14 @@
 import React from "react";
-import NextTopLoader from "nextjs-toploader";
+import PageContainer from "@/components/layouts/PageContainer";
 
-const Page = () => {
+const DashboardPage = () => {
   return (
     <div>
-      <NextTopLoader showSpinner={false} color={"#6d28d9"} />
+      <PageContainer>
+        <h1 className="text-2xl font-semibold">Dashboard</h1>
+      </PageContainer>
     </div>
   );
 };
 
-export default Page;
+export default DashboardPage;

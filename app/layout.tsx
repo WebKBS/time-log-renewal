@@ -3,6 +3,8 @@ import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/provider/ThemeProvider";
 import { cn } from "@/lib/utils";
+import NextTopLoader from "nextjs-toploader";
+import React from "react";
 
 const notoSans = Noto_Sans_KR({
   weight: ["400", "500", "600", "700", "800"],
@@ -24,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <body className={cn("min-h-screen", notoSans.className)}>
+        <NextTopLoader showSpinner={false} color={"#6d28d9"} />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
