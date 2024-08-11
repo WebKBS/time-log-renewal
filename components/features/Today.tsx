@@ -7,7 +7,7 @@ const Today = () => {
   const dayOfWeek = today.getDay();
 
   return (
-    <div className="flex items-center text-sm">
+    <div className="flex items-center text-xs self-end leading-[1.8] flex-wrap">
       <p>{today.toLocaleDateString("ko-KR", { timeZone: "Asia/Seoul" })}</p>
       <p>
         {dayOfWeek === 0

@@ -11,16 +11,16 @@ const cardData = [
     percentage: "식사시간 제외",
   },
   {
-    title: "이번 달 일한 총 시간",
-    icon: <ChartLine />,
-    value: "50:45:49",
-    percentage: "식사시간 제외",
-  },
-  {
     title: "주간 남은 업무시간",
     icon: <AlarmClock />,
     value: "38:00:00",
     percentage: "",
+  },
+  {
+    title: "이번 달 일한 총 시간",
+    icon: <ChartLine />,
+    value: "50:45:49",
+    percentage: "식사시간 제외",
   },
 ];
 

@@ -26,6 +26,7 @@ const FormButton = ({ label, size, variant }: FormButtonProps) => {
       disabled={pending}
       size={size}
       variant={variant}
+      className="w-[80%] mx-auto block md:w-auto"
     >
       {pending ? <LoadingIcon className="w-6 h-6" /> : label}
     </Button>
