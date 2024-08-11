@@ -15,16 +15,23 @@ interface FormButtonProps {
     | "ghost"
     | "link";
   className?: string;
+  disabled?: boolean;
 }
 
-const FormButton = ({ label, size, variant, className }: FormButtonProps) => {
+const FormButton = ({
+  label,
+  size,
+  variant,
+  className,
+  disabled,
+}: FormButtonProps) => {
   const { pending } = useFormStatus();
 
   return (
     <Button
       color="primary"
       type="submit"
-      disabled={pending}
+      disabled={disabled || pending}
       size={size}
       variant={variant}
       className={className}

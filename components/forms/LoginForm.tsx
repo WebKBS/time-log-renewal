@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useFormState } from "react-dom";
 import { login } from "@/actions/login";
 import FormButton from "@/components/buttons/FormButton";
@@ -15,6 +15,16 @@ import { Input } from "@/components/ui/input";
 
 const LoginForm = () => {
   const [state, formAction] = useFormState(login, null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
 
   return (
     <>
@@ -30,7 +40,13 @@ const LoginForm = () => {
             <div className="grid gap-4">
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" />
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  onChange={handleEmailChange}
+                  value={email}
+                />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">
@@ -42,9 +58,21 @@ const LoginForm = () => {
                   {/*  Forgot your password?*/}
                   {/*</Link>*/}
                 </div>
-                <Input id="password" name="password" type="password" />
+                <Input
+                  id="password"
+                  name="password"
+                  type="password"
+                  onChange={handlePasswordChange}
+                  value={password}
+                />
               </div>
-              <FormButton label="로그인" />
+              {state?.error ? (
+                <div className="text-red-500 text-sm">
+                  {state?.error.message}
+                </div>
+              ) : null}
+
+              <FormButton label="로그인" disabled={!email || !password} />
               {/*<Button variant="outline" className="w-full">*/}
               {/*  Login with Google*/}
               {/*</Button>*/}

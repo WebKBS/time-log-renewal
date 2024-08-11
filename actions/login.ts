@@ -16,7 +16,7 @@ export async function login(prevData: any, formData: FormData) {
   const { error } = await supabase.auth.signInWithPassword(data);
 
   if (error) {
-    redirect("/error");
+    return { error: { message: "로그인 정보가 일치하지 않습니다." } };
   }
 
   revalidatePath("/dashboard", "layout");
