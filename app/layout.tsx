@@ -12,7 +12,7 @@ import { ThemeProvider } from "@/provider/ThemeProvider";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-import { className } from "postcss-selector-parser";
+import Sidebar from "@/components/navigation/SideBar";
 
 const notoSans = Noto_Sans_KR({
   weight: ["400", "500", "600", "700", "800"],
@@ -40,6 +40,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Sidebar />
           <div className={"flex min-h-dvh flex-col"}>
             <Header />
             <main className="flex-1">{children}</main>
