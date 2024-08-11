@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import Sidebar from "@/components/navigation/SideBar";
+import NextTopLoader from "nextjs-toploader";
 
 const notoSans = Noto_Sans_KR({
   weight: ["400", "500", "600", "700", "800"],
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={cn("min-h-screen", notoSans.className)}>
+        <NextTopLoader showSpinner={false} />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
