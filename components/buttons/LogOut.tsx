@@ -7,11 +7,10 @@ import FormButton from "@/components/buttons/FormButton";
 
 const LogOut = () => {
   const [state, formAction] = useFormState(logout, null);
-  console.log(state);
 
   return (
     <form action={formAction}>
-      <FormButton label={"로그아웃"} />
+      <FormButton label={"로그아웃"} size={"sm"} variant="outline" />
     </form>
   );
 };

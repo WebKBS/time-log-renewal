@@ -4,11 +4,29 @@ import { useFormStatus } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { LoadingIcon } from "@/svgs/LoadingIcon";
 
-const FormButton = ({ label }: { label: string }) => {
+interface FormButtonProps {
+  label: string;
+  size?: "sm" | "default" | "lg" | "icon";
+  variant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link";
+}
+
+const FormButton = ({ label, size, variant }: FormButtonProps) => {
   const { pending } = useFormStatus();
 
   return (
-    <Button color="primary" type="submit" disabled={pending}>
+    <Button
+      color="primary"
+      type="submit"
+      disabled={pending}
+      size={size}
+      variant={variant}
+    >
       {pending ? <LoadingIcon className="w-6 h-6" /> : label}
     </Button>
   );
