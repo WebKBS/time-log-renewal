@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={cn("min-h-screen", notoSans.className)}>
-        <NextTopLoader showSpinner={false} />
+        <NextTopLoader showSpinner={false} color={"#6d28d9"} />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
