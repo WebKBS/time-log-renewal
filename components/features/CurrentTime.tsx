@@ -1,17 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import { UTCDate } from "@date-fns/utc";
+import { UTCDate } from "@date-fns/utc";
 
 const CurrentTime = () => {
-  // const [time, setTime] = useState(new UTCDate());
-
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(new UTCDate());
 
   useEffect(() => {
     const updateCurrentTime = () => {
-      // setTime(new UTCDate());
-      setTime(new Date());
+      setTime(new UTCDate());
+      // setTime(new Date());
     };
 
     const timer = setInterval(updateCurrentTime, 1000);
