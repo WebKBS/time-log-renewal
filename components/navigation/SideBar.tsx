@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSidebar } from "@/store/useSideBar";
 import { navItems } from "@/constants/data";
 import { DashboardNav } from "@/components/navigation/dashboard-nav";
+import { Logo } from "@/constants/icons";
 
 type SidebarProps = {
   className?: string;
@@ -27,27 +28,12 @@ export default function Sidebar({ className }: SidebarProps) {
       )}
     >
       <div className="hidden p-5 pt-10 lg:block">
-        <Link href={"/dashboard"} className="flex items-center">
+        <Link href={"/dashboard"} className="flex items-center gap-2">
+          {isMinimized ? "" : <Logo className="h-8 w-8" />}
           {isMinimized ? (
-            ""
+            <Logo className="h-8 w-8" />
           ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-2 h-6 w-6"
-            >
-              <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
-            </svg>
-          )}
-          {isMinimized ? (
-            <span className="font-extrabold">TL</span>
-          ) : (
-            <span className="font-extrabold">TIME LOG</span>
+            <span className="font-extrabold text-nowrap">TIME LOG</span>
           )}
         </Link>
       </div>
