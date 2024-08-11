@@ -1,15 +1,13 @@
 import React from "react";
-import Link from "next/link";
 import { ThemeToggleButton } from "@/components/shadcn/ThemeToogleButton";
 
 const Header = () => {
   return (
     <header className="">
-      <div className="container flex items-center p-3 gap-4 justify-between">
-        <Link href={"/"} className="font-extrabold">
-          TIME LOG
-        </Link>
-        <ThemeToggleButton />
+      <div className="flex items-center p-3 gap-4 justify-between">
+        <div className="ml-auto">
+          <ThemeToggleButton />
+        </div>
       </div>
     </header>
   );
