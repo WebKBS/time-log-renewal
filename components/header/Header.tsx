@@ -2,11 +2,11 @@ import React from "react";
 import { ThemeToggleButton } from "@/components/shadcn/ThemeToogleButton";
 import LogOut from "@/components/buttons/LogOut";
 import dynamic from "next/dynamic";
-import Today from "@/components/features/Today";
+import Today from "@/features/Today";
 import MobileSidebar from "@/components/navigation/MobileSidebar";
 import { cn } from "@/lib/utils";
 
-const CurrentTime = dynamic(() => import("@/components/features/CurrentTime"), {
+const CurrentTime = dynamic(() => import("@/features/CurrentTime"), {
   ssr: false,
 });
 
