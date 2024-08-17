@@ -1,4 +1,4 @@
-import LoginForm from "@/components/forms/LoginForm";
+import LoginForm from "@/components/client/forms/LoginForm";
 import { Logo } from "@/constants/icons";
 import Image from "next/image";
 import timeImage from "@/public/images/background/time.jpg";

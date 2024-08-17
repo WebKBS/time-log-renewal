@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useFormState } from "react-dom";
 import { login } from "@/actions/login";
-import FormButton from "@/components/buttons/FormButton";
+import FormButton from "@/components/client/buttons/FormButton";
 import {
   Card,
   CardContent,

@@ -10,7 +10,7 @@ const cardData = [
     percentage: "식사시간 제외",
   },
   {
-    title: "주간 남은 업무시간",
+    title: "주간 남은 총 업무시간",
     icon: <AlarmClock />,
     value: "38:00:00",
     percentage: "",

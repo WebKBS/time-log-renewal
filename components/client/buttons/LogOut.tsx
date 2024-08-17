@@ -3,7 +3,7 @@
 import React from "react";
 import { useFormState } from "react-dom";
 import { logout } from "@/actions/signout";
-import FormButton from "@/components/buttons/FormButton";
+import FormButton from "@/components/client/buttons/FormButton";
 
 const LogOut = ({ className }: { className?: string }) => {
   const [state, formAction] = useFormState(logout, null);
@@ -14,7 +14,7 @@ const LogOut = ({ className }: { className?: string }) => {
         label={"로그아웃"}
         size={"sm"}
         variant="outline"
-        className="w-[80%] mx-auto block md:w-auto"
+        className="w-[80%] mx-auto block md:w-auto hover:border-red-500"
       />
     </form>
   );

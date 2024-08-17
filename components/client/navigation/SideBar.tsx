@@ -5,7 +5,7 @@ import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { useSidebar } from "@/store/useSideBar";
 import { navItems } from "@/constants/data";
-import { DashboardNav } from "@/components/navigation/dashboard-nav";
+import { DashboardNav } from "@/components/client/navigation/dashboard-nav";
 import { Logo } from "@/constants/icons";
 
 type SidebarProps = {
