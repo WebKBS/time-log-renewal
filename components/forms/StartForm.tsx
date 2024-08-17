@@ -2,12 +2,10 @@
 import React from "react";
 import { useFormState } from "react-dom";
 import { createRecord } from "@/actions/start";
-import FormButton from "@/components/client/buttons/FormButton";
+import FormButton from "@/components/buttons/FormButton";
 
 const StartForm = ({ workingStatus }: { workingStatus: boolean }) => {
   const [state, formAction] = useFormState(createRecord, null);
-
-  console.log("state", state);
 
   return (
     <form action={formAction}>

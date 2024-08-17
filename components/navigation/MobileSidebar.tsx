@@ -11,8 +11,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { navItems } from "@/constants/data";
-import { DashboardNav } from "@/components/client/navigation/dashboard-nav";
-import LogOut from "@/components/client/buttons/LogOut";
+import { DashboardNav } from "@/components/navigation/dashboard-nav";
+import LogOut from "@/components/buttons/LogOut";
 
 const MobileSidebar = () => {
   const [open, setOpen] = useState(false);

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/layouts/header/Header";
 import Footer from "@/components/layouts/footer/Footer";
-import Sidebar from "@/components/client/navigation/SideBar";
+import Sidebar from "@/components/navigation/SideBar";
 
 export const metadata: Metadata = {
   title: "Time Log",

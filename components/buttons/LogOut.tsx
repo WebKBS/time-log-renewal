@@ -3,7 +3,7 @@
 import React from "react";
 import { useFormState } from "react-dom";
 import { logout } from "@/actions/signout";
-import FormButton from "@/components/client/buttons/FormButton";
+import FormButton from "@/components/buttons/FormButton";
 
 const LogOut = ({ className }: { className?: string }) => {
   const [state, formAction] = useFormState(logout, null);

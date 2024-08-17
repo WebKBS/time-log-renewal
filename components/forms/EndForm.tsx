@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import FormButton from "@/components/client/buttons/FormButton";
+import FormButton from "@/components/buttons/FormButton";
 import { useFormState } from "react-dom";
 import { endRecord } from "@/actions/end";
 

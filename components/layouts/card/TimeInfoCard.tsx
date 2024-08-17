@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlarmClock, CalendarCheck, ChartLine } from "lucide-react";
+import { fetchUserRecords } from "@/actions/fetchUserRecords";
 
 const cardData = [
   {
@@ -23,7 +24,14 @@ const cardData = [
   },
 ];
 
-const TimeInfoCard = () => {
+const TimeInfoCard = async ({ userId }: { userId: string }) => {
+  const { todayRecords, weekRecords, monthRecords, todayStatus, allRecords } =
+    await fetchUserRecords({ userId });
+
+  console.log("todayRecords", todayRecords);
+  console.log("weekRecords", weekRecords);
+  console.log("monthRecords", monthRecords);
+
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {cardData.map((card, index) => (

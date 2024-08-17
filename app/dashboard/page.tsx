@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import PageContainer from "@/components/layouts/container/PageContainer";
 import TimeInfoCard from "@/components/layouts/card/TimeInfoCard";
-import StartEndCard from "@/components/server/StartEndCard";
+import StartEndCard from "@/components/layouts/card/StartEndCard";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { Info } from "lucide-react";
@@ -22,7 +22,7 @@ const DashboardPage = async () => {
       <Suspense fallback={<div>Loading...</div>}>
         <StartEndCard userId={userId} />
       </Suspense>
-      <TimeInfoCard />
+      <TimeInfoCard userId={userId} />
       <div className="text-sm mt-2 mb-4 flex items-center gap-2">
         <Info size={20} />
         <p>
