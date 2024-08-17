@@ -1,3 +1,5 @@
+"use server";
+
 import React from "react";
 import { AlarmClock, CalendarCheck, ChartLine } from "lucide-react";
 import { fetchUserRecords } from "@/actions/fetchUserRecords";
