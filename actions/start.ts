@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 import { revalidatePath } from "next/cache";
 import { utcDate } from "@/features/date";
 import { PrismaClient } from "@prisma/client";
+import { UTCDate } from "@date-fns/utc";
 
 export async function createRecord(prevState: any, formData: FormData) {
   const supabase = createClient();
@@ -36,7 +37,7 @@ export async function createRecord(prevState: any, formData: FormData) {
         email: email,
         userId: userId,
         date: utcDate,
-        startTime: utcDate,
+        startTime: new UTCDate(),
         status: true,
       },
     });
