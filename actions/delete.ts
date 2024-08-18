@@ -1,9 +1,10 @@
 "use server";
-
-import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { PrismaClient } from "@prisma/client";
 
 export const deleteRecord = async (recordId: number, userId: string) => {
+  const prisma = new PrismaClient();
+
   try {
     const record = await prisma.record.delete({
       where: { id: recordId, userId: userId },

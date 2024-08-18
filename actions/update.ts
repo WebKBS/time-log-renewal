@@ -1,8 +1,8 @@
 "use server";
 
-import { prisma } from "@/lib/prisma";
 import { createClient } from "@/utils/supabase/server";
 import { revalidatePath } from "next/cache";
+import { PrismaClient } from "@prisma/client";
 
 export async function updateRecord(
   recordId: number,
@@ -12,6 +12,7 @@ export async function updateRecord(
 ) {
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
+  const prisma = new PrismaClient();
 
   if (error || !data?.user) {
     throw new Error("사용자 세션을 가져오지 못했습니다.");

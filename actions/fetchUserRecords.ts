@@ -1,18 +1,20 @@
 "use server";
 
-import { prisma } from "@/lib/prisma";
 import {
   endOfMonthUTC,
   endOfWeekUTC,
   startOfMonthUTC,
   startOfWeekUTC,
 } from "@/features/date";
+import { PrismaClient } from "@prisma/client";
 
 interface fetchUserRecordsProps {
   userId: string;
 }
 
 export const fetchUserRecords = async ({ userId }: fetchUserRecordsProps) => {
+  const prisma = new PrismaClient();
+
   try {
     const todayRecords = await prisma.record.findMany({
       orderBy: {
@@ -73,6 +75,8 @@ export const fetchUserRecords = async ({ userId }: fetchUserRecordsProps) => {
 
 // 최신데이터 10개만 가져오기
 export const latestRecords = async (userId: string) => {
+  const prisma = new PrismaClient();
+
   try {
     return await prisma.record.findMany({
       where: {
