@@ -2,6 +2,7 @@
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import { workHoursInSeconds } from "@/features/date";
+import { useTheme } from "next-themes";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -10,6 +11,8 @@ const WeeklyWorkChart = ({
 }: {
   totalWeekHoursInSeconds: number;
 }) => {
+  const { theme } = useTheme();
+
   const totalWorkHours = workHoursInSeconds / 3600;
   const workedHours = totalWeekHoursInSeconds / 3600;
   let remainingHours = totalWorkHours - workedHours;
@@ -37,7 +40,7 @@ const WeeklyWorkChart = ({
     plugins: {
       legend: {
         labels: {
-          color: "#ffffff", // 레이블 텍스트를 흰색으로 설정
+          color: theme === "dark" ? "#ffffff" : "#000000",
         },
       },
       tooltip: {
