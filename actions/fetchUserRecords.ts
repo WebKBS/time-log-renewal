@@ -70,3 +70,23 @@ export const fetchUserRecords = async ({ userId }: fetchUserRecordsProps) => {
     await prisma.$disconnect();
   }
 };
+
+// 최신데이터 10개만 가져오기
+export const latestRecords = async (userId: string) => {
+  try {
+    return await prisma.record.findMany({
+      where: {
+        userId,
+      },
+      orderBy: {
+        startTime: "desc",
+      },
+      take: 10,
+    });
+  } catch (error) {
+    console.error("최신 데이터 가져오기 실패:", error);
+    throw new Error("최신 데이터 가져오기 실패");
+  } finally {
+    await prisma.$disconnect();
+  }
+};

@@ -19,7 +19,7 @@ const MobileSidebar = () => {
   return (
     <>
       <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger asChild>
+        <SheetTrigger>
           <MenuIcon />
         </SheetTrigger>
         <SheetContent side="left" className="!px-0">

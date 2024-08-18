@@ -12,7 +12,7 @@ const CurrentTime = dynamic(() => import("@/features/CurrentTime"), {
 
 const Header = () => {
   return (
-    <header>
+    <header className="sticky inset-x-0 top-0 w-full z-[1] bg-background">
       <nav className="flex items-center justify-between md:block">
         <div className={cn("block ml-4 md:!hidden")}>
           <MobileSidebar />
